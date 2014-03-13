@@ -1,0 +1,12 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.master" AutoEventWireup="true" CodeBehind="hobbies.aspx.cs" Inherits="PersonalWebsitePatrikWilhelmsson.hobbies" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <p>
+        <a href="../games.aspx">Games</a>
+    </p>
+
+    <p>
+        <a href="../Music.aspx">Music</a>
+    </p>
+
+</asp:Content>
