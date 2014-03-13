@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpage.master.cs" Inherits="PersonalWebsitePatrikWilhelmsson.Masterpage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <!--
+ * Built with Visual Studio 2010 using ASP.NET 4.0: XHTML, CSS, MySQL, JavaScript
+ * wilhelmssonpatrik.com
+ *
+ * @author Patrik Wilhelmsson, patrik.wilhelmsson86@gmail.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Personal Website of Patrik Wilhelmsson</title>
+    <link rel="Stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+</head>
+<body id="bodyid">
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="banner">
+                <script type="text/javascript">
+                    var images = new Array();
+                    index = 0;
+                    var memVar;
+
+                    images[0] = "<img src='../Images/LoadingBay01.jpg' class='imgBanner' />";
+                    images[1] = "<img src='../Images/TAExterior01.jpg' class='imgBanner' />";
+                    images[2] = "<img src='../Images/OutsideBunker02.jpg' class='imgBanner'/>";
+                    images[3] = "<img src='../Images/TALeftPark02.jpg' class='imgBanner'/>";
+                    
+                    //memVar = index;
+
+                    index = Math.floor(Math.random() * images.length);
+                    /*
+                    if (index == memVar) {
+                        ++index;
+                        if (index == images.length) {
+                            index = 0;
+                        }
+                    }
+                    */
+                    document.write(images[index]);
+
+                </script>
+            </div>
+
+            <div id="navigation"> <!--unordered list -->
+                <ul class="nav">
+                    <li id="homeNav"> <a href="../default.aspx">Home</a> </li>
+                    <li id="projectsNav"> <a href="../Projects.aspx">Projects</a> </li>
+                    <li id="hobbiesNav"> <a href="../hobbies.aspx">Hobbies</a> </li>
+                  <!--  <li id="gamesNav"> <a href="../Games.aspx">Games</a> </li> byt till Hobbies -->
+                  <!--  <li id="portfolioNav"> <a href="../Portfolio.aspx">Portfolio</a> </li> byt till Hobbies -->
+                    <li id="cvNav"> <a href="../CV.aspx">CV</a> </li>
+                    <li id="contactNav"> <a href="../Contact.aspx">Contact</a> </li>
+                </ul>
+                            <script type="text/javascript">
+                                $(document).ready(function () 
+                                {
+                                    $('.nav a').each(function (index) 
+                                    {
+                                        if (this.href.trim() == window.location)
+                                            $(this).parent().addClass("currentPage");
+                                    });
+                                });
+                            </script>
+            </div>
+
+            <div id="content_area">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div id="footer">
+                <p>
+                © Patrik Wilhelmsson<br />
+                Created using ASP.NET<br /> 
+                </p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
